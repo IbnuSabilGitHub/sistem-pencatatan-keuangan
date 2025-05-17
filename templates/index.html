@@ -1,19 +1,34 @@
 {% extends "base.html" %}
 
+{% import 'components/balance-card.html' as card %}
+
 {% block head %}
 {{ super() }}
 <meta name="description" content="Landing Page" />
 {% endblock %}
 
 {% block content %}
-<div class="flex flex-col items-center justify-center min-h-screen bg-gray-900 gap-6">
-    <img class="w-1/2 hidden" src="https://media1.tenor.com/m/CWgfFh7ozHkAAAAC/rick-astly-rick-rolled.gif" alt="rick rolled">
-    <button id="clickMe" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Click Me</button>
-    <button id="loadData" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">get data from /api/data</button>
-    <p id="output" class="mt-4 text-red-500"></p>
-</div>
+<main class="flex flex-1 flex-col gap-4 px-6 py-16 bg-gray-950 min-h-screen">
+    <section class="bg-gray-950 min-h-screen">
+        <div class="max-w-screen-2xl mx-auto px-4 flex flex-col gap-8">
+
+            <!-- Grid untuk kartu -->
+            <div class="grid auto-rows-min gap-y-6 gap-x-12 md:grid-cols-3">
+                {{ card.balanceCard(label="Income", balance='10123') }}
+                {{ card.balanceCard(label="Expense", balance='345345') }}
+                {{ card.cardProfit(isProfit=True, balance='23472', percent='23') }}
+            </div>
+
+            <!-- Chart -->
+            <div class="aspect-video rounded-xl bg-gray-900 border border-gray-800 flex items-center justify-center">
+                <h1 class="text-4xl text-gray-200">Container for chart</h1>
+            </div>
+
+        </div>
+    </section>
+</main>
 {% block scripts %}
-    <script src="{{ url_for('static', filename='JS/domManipulation.js') }}"></script>
-    <script src="{{ url_for('static', filename='JS/ajax.js') }}"></script>
+<script src="{{ url_for('static', filename='JS/domManipulation.js') }}"></script>
+<script src="{{ url_for('static', filename='JS/ajax.js') }}"></script>
 {% endblock %}
 {% endblock %}
