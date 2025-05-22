@@ -6,5 +6,5 @@ def connect_db():
         host='localhost',
         user='root',
         password='',
-        database='testing',
+        database='transaksi',
     )
