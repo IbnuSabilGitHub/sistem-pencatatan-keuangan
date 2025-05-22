@@ -1,7 +1,7 @@
 import pymysql
 
 def connect_db():
-    """Connect to the database and return the connection."""
+    """Kokenksi ke database MySQL dan kembalikan objek koneksi."""
     return pymysql.connect(
         host='localhost',
         user='root',
