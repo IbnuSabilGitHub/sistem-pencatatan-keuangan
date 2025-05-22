@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS income (
     description VARCHAR(100) NOT NULL,
     amount DECIMAL(10, 2) NOT NULL,
     date DATE NOT NULL,
+    is_deleted BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (category_id) REFERENCES category_income(id)
     
 );
@@ -33,5 +34,6 @@ CREATE TABLE IF NOT EXISTS expense (
     description VARCHAR(100) NOT NULL,
     amount DECIMAL(10, 2) NOT NULL,
     date DATE NOT NULL,
+    is_deleted BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (category_id) REFERENCES category_expense(id)
 );
