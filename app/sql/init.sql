@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS category_income (
 -- TABLES category expense
 CREATE TABLE IF NOT EXISTS category_expense (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
+    name VARCHAR(50) NOT NULL
 );
 
 -- TABLES income
